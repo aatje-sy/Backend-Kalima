@@ -20,14 +20,4 @@ class turn extends Controller
         return view('index', ['araay' => $araay]);
 
     }
-
-    public function words()
-    {
-
-        $woord = 'horny';
-
-
-
-
-    }
 }

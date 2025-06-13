@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\turn;
+use App\Http\Controllers\WordController;
+use App\Http\Controllers\TurnController;
 
 Route::get('/', function () {
     return view('layouts.loginlayout');
@@ -16,5 +17,11 @@ Route::POST('/Game-Dashboard', function () {
     return view('/index', ['araay' => [1,2]]);
 })->name('game');
 
+Route::get('/reset', function () {
+    session()->flush();
+    return redirect('/');
+})->name('reset');
 
-Route::post('/next-turn', [turn::class, 'turns'])->name('next-turn');
+
+Route::post('/submit-word', [WordController::class, 'submitWord'])->name('submit-word');
+Route::any('/next-turn', [TurnController::class, 'turns'])->name('next-turn');

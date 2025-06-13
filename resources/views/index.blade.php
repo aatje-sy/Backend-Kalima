@@ -17,7 +17,12 @@
 
     <div class="players-container">
         <h1>Spelers</h1>
-        <p>{{ session('username') }} vs {{ session('username2') }}</p>
+        <p>
+            {{ session('username') }} vs {{ session('username2') }}
+            <br>
+            <strong>Woord: {{ session('wordle_answer') }}</strong>
+        </p>
+
     </div>
 
     @foreach ($araay as $key)

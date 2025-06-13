@@ -26,3 +26,4 @@ class WordController extends Controller
         return redirect()->route('next-turn');
     }
 }
+
